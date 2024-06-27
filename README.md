@@ -19,23 +19,28 @@ modifier onlyAdmin(): Restricts certain functions to be callable only by the con
 constructor(): Sets the contract deployer as the administrator using msg.sender.
 
 ### Functions
-validateIITEligibility
+       validateIITEligibility
        function validateIITEligibility(uint256 newScore) external onlyAdmin
+       
 Checks if the student's score is greater than 90. If true, it updates the score and emits the ScoreUpdated event. Otherwise, it throws an error with a require() statement.
 
-validateNITEligibility
+       validateNITEligibility
        function validateNITEligibility(uint256 newScore) external onlyAdmin
+       
 Checks if the student's score is greater than 80. If true, it updates the score and emits the ScoreUpdated event. Otherwise, it throws an error with a require() statement.
 
-validatePrivateEligibility
+       validatePrivateEligibility
        function validatePrivateEligibility(uint256 newScore) external onlyAdmin
+       
 Checks if the student's score is greater than 60. If true, it updates the score and emits the ScoreUpdated event. Otherwise, it throws an error with a require() statement.
 
-checkMinimumPassingScore
+       checkMinimumPassingScore
        function checkMinimumPassingScore() external view
+       
 Uses an assert() statement to ensure the student's score is at least 33. The assert() statement is used here to enforce a condition that should always be true and will cause the transaction to revert if it is not met.
 
-validateGeneralEligibility
+       validateGeneralEligibility
        function validateGeneralEligibility(uint256 newScore) external onlyAdmin
+       
 Checks if the student's score is greater than 45. If not, it uses a revert() statement to stop execution and revert any changes made during the transaction, providing a specific error message.
 
