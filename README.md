@@ -7,6 +7,7 @@ The UniversityEligibility contract is designed to manage and verify the eligibil
 
 ### State Variables
 uint256 public score: Stores the score of the student, initialized to 30.
+
 address public administrator: Stores the address of the contract administrator (the deployer).
 
 ### Events
