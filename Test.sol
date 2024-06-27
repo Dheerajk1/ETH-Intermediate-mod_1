@@ -10,7 +10,7 @@ contract UniversityEligibility
     event ScoreUpdated(uint256 newScore);                  // creating event to log when the score is updated
 
    
-    modifier onlyAdmin()                                  // creating modifier to restrict access to the administrator
+    modifier onlyAdmin()                                   // creating modifier to restrict access to the administrator
     {
         require(msg.sender == administrator, "Access denied: Caller is not the admin");
         _;
