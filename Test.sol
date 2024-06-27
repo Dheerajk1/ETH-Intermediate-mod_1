@@ -7,11 +7,11 @@ contract UniversityEligibility
     address public administrator;
 
    
-    event ScoreUpdated(uint256 newScore);                  // creating event to log when the score is updated
+    event ScoreUpdated(uint256 newScore);           // creating event to log when the score is updated
 
    
-    modifier onlyAdmin()                                   // creating modifier to restrict access to the administrator
-    {
+    modifier onlyAdmin()                            // creating modifier to restrict access to the administrator
+    { 
         require(msg.sender == administrator, "Access denied: Caller is not the admin");
         _;
     }
@@ -23,11 +23,11 @@ contract UniversityEligibility
     }
 
     
-    function validateIITEligibility(uint256 newScore) external onlyAdmin       // Function to verify eligibility for IIT
+    function validateIITEligibility(uint256 newScore) external onlyAdmin      // Function to verify eligibility for IIT
     {
         require(newScore > 90, "Ineligible: Score must be greater than 90");
 
-        score = newScore;
+        score = newScore;                                                     // here the score will be automatically updated
         emit ScoreUpdated(newScore);
     }
 
@@ -50,9 +50,9 @@ contract UniversityEligibility
     }
 
     
-    function checkMinimumPassingScore() external view                          // Function to check minimum passing score
+    function checkMinimumPassingScore() external view        // Function to check minimum passing score
     {
-        assert(score >= 33); // This should always be true
+        assert(score >= 33);                                 // This should always be true
     }
 
     
@@ -65,4 +65,3 @@ contract UniversityEligibility
         emit ScoreUpdated(newScore);
     }
 }
-
